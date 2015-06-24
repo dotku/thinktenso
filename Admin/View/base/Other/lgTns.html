@@ -1,0 +1,119 @@
+<include file="Public:head"/>
+    <style type="text/css">
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    </style>
+<div id="#wrap">
+    <include file="Public:top"/>
+    <div class="mainContainer container-fluid">
+      <div class="row-fluid">
+		<include file="Public:sidebar"/>
+        
+        <div class="span9">
+		  
+          <div class="row-fluid">
+			<h2>转运查询</h2>
+            <div style="padding-bottom:5px;">
+            <form class="form-horizontal">
+                <label>查询方式: 
+                <select>
+                    <option>用户编号(UID)
+                    <option>发货单
+                    <option>发货日期
+                    <option>到货编号
+                </label>
+                <input type="text">
+                <input type="submit" value=" 查询 ">
+            </form>
+            </div>
+            <table class="table table-bordered table-hover">
+        <tbody><tr>
+            <th>字段</th>
+            <th>内容</th>
+            <th>备注</th>
+        </tr>
+        <tr>
+            <td>到货编号</td>
+            <td>20141026XXX</td>
+            <td>由系统自动生成，不重复</td>
+        </tr>
+        <tr>
+            <td>客户编号</td>
+            <td>123
+            <td>只需要填写UID号码，省略掉0，比如 UID0000015 就填写 15 就好了。</td>
+        </tr>
+        <tr>
+            <td>重量</td>
+            <td>123g
+            <td>以 克(g) 为单位</td>
+        </tr>
+        <tr>
+            <td>破损确认</td>
+            <td>
+                <div>无破损</div>
+                [图片1][图片2]
+            </td>
+            <td>描述破损情况，并上传 1~3 张截图（如有较多截图文件，请 zip 打包）</td>
+        </tr>
+        <tr>
+            <td>收货员</td>
+            <td>阴先生</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>支付金额</td>
+            <td>xxx RMB</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>收款员</td>
+            <td>小明</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>发货方式</td>
+            <td>EMS XXX</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>发货员</td>
+            <td>阴先生</td>
+            <td></td>
+        </tr>
+        </tbody>
+</table>
+    
+          </div><!--/row-->
+        </div><!--/span-->
+      </div><!--/row-->
+    </div>
+    <div id="push"></div>
+</div>
+<include file="Public:footer"/>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/jquery.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-transition.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-alert.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-modal.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-dropdown.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-scrollspy.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-tab.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-tooltip.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-popover.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-button.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-collapse.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-carousel.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-typeahead.js"></script>

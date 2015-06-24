@@ -1,0 +1,47 @@
+<include file="Public:head"/>
+<style>
+	select {
+		width: auto;
+	}
+</style>
+<div id="wrap">
+<include file="Public:top"/>
+    <div class="mainContainer container-fluid">
+      <div class="row-fluid">
+      <include file="Public:sidebar"/>
+        <div class="span9">
+          <div class="row-fluid">
+            <h3>客户信息</h3>
+			<form method="post">
+				<table class="table table-bordered">
+					<tr>
+						<th>入库货物
+						<td>
+								<select name="pkg_id">
+									<volist name="table" id="vo">
+										<option value="{$vo.pkg_id}">入库编号: {$vo.pkg_id} | 来源编号: {$vo.pkg_orig_number} | 客户编号: {$vo.user_id}</option>
+									</volist>
+									<option value="">无</option>
+								</select>
+						</td>
+					</tr>
+					<tr>
+						<th>详细信息
+						<td>
+							<volist name="table" id="vo">
+								{$vo.name}
+							</volist>
+						</td>
+					</tr>
+				</table>
+				<input type="hidden" name="pkg_status" value="final"/>
+				<input type="submit" value=" 提交 "/>
+			</form>
+          </div><!--/row-->
+        </div><!--/span-->
+      </div><!--/row-->
+    </div><!--/.fluid-container-->
+	<div id="push"><!--FOR STICK FOOTER--></div>
+</div>
+<include file="Public:footer"/>
+<include file="Public:javascript"/>

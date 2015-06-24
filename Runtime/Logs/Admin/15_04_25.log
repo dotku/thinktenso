@@ -1,0 +1,682 @@
+[ 2015-04-25T23:14:33+08:00 ] 127.0.0.1 /toyokou_tenso-japan/service/Admin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `tns_site` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `tns_item` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `tns_site` WHERE `prty_name` = 'site_name' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: ifCurrent_subMenu C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 78 行.
+NOTIC: [8] Undefined index: username C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 79 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-04-25T23:14:33+08:00 ] 127.0.0.1 /toyokou_tenso-japan/service/Admin/Index/stock
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tns_site` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `tns_item` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `tns_site` WHERE `prty_name` = 'site_name' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: ifCurrent_subMenu C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 78 行.
+NOTIC: [8] Undefined index: username C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 79 行.
+NOTIC: [8] Undefined index: item_status C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 88 行.
+SQL: SELECT * FROM `tns_item` ORDER BY item_id desc LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `tns_item` WHERE ( ifRecycle = 0 ) ORDER BY item_create_time desc LIMIT 10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: Index C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 49 行.
+NOTIC: [8] Undefined index: Tenso C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 50 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 53 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 53 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 53 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 53 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 53 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 53 行.
+NOTIC: [8] Undefined index: Other C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 56 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 70 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 70 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 70 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 70 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 70 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\a41dec749355bc866fb0cfdce14806ec.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-04-25T23:14:40+08:00 ] 127.0.0.1 /toyokou_tenso-japan/service/Admin/Index/request.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tns_site` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `tns_item` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `tns_site` WHERE `prty_name` = 'site_name' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: ifCurrent_subMenu C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 78 行.
+NOTIC: [8] Undefined index: username C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 79 行.
+NOTIC: [8] Undefined index: item_status C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 109 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) ORDER BY item_create_time desc LIMIT 10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: Index C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 54 行.
+NOTIC: [8] Undefined index: Tenso C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 55 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 58 行.
+NOTIC: [8] Undefined index: Other C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 61 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-04-25T23:14:44+08:00 ] 127.0.0.1 /toyokou_tenso-japan/service/Admin/Index/payment.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tns_site` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `tns_item` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `tns_site` WHERE `prty_name` = 'site_name' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: ifCurrent_subMenu C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 78 行.
+NOTIC: [8] Undefined index: username C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 79 行.
+NOTIC: [8] Undefined index: item_status C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 126 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) ORDER BY item_create_time desc LIMIT 10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: Index C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 54 行.
+NOTIC: [8] Undefined index: Tenso C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 55 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 58 行.
+NOTIC: [8] Undefined index: Other C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 61 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\27c06c010a1fc78afce23359b80b86a8.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-04-25T23:14:46+08:00 ] 127.0.0.1 /toyokou_tenso-japan/service/Admin/Index/shipping.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tns_site` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `tns_item` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `tns_site` WHERE `prty_name` = 'site_name' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: ifCurrent_subMenu C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 78 行.
+NOTIC: [8] Undefined index: username C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 79 行.
+NOTIC: [8] Undefined index: item_status C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 143 行.
+SQL: SELECT * FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) ORDER BY item_create_time desc LIMIT 10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Index C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 54 行.
+NOTIC: [8] Undefined index: Tenso C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 55 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 58 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 58 行.
+NOTIC: [8] Undefined index: Other C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 61 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-04-25T23:16:15+08:00 ] 127.0.0.1 /toyokou_tenso-japan/service/Admin/Index/shipping.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tns_site` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `tns_item` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `tns_site` WHERE `prty_name` = 'site_name' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: ifCurrent_subMenu C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 78 行.
+NOTIC: [8] Undefined index: username C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 79 行.
+NOTIC: [8] Undefined index: item_status C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 143 行.
+SQL: SELECT * FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) ORDER BY item_create_time desc LIMIT 10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: Index C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 54 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: Tenso C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 60 行.
+NOTIC: [8] Undefined index: Other C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 64 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 78 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 78 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 78 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 78 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 78 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-04-25T23:16:42+08:00 ] 127.0.0.1 /toyokou_tenso-japan/service/Admin/Index/shipping.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tns_site` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `tns_item` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `tns_site` WHERE `prty_name` = 'site_name' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: ifCurrent_subMenu C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 78 行.
+NOTIC: [8] Undefined index: username C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 79 行.
+NOTIC: [8] Undefined index: item_status C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 143 行.
+SQL: SELECT * FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) ORDER BY item_create_time desc LIMIT 10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: Index C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 54 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: Tenso C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 60 行.
+NOTIC: [8] Undefined index: Other C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 64 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 78 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 78 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 78 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 78 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 78 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-04-25T23:17:18+08:00 ] 127.0.0.1 /toyokou_tenso-japan/service/Admin/Index/shipping.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tns_site` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `tns_item` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `tns_site` WHERE `prty_name` = 'site_name' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: ifCurrent_subMenu C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 78 行.
+NOTIC: [8] Undefined index: username C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 79 行.
+NOTIC: [8] Undefined index: item_status C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 143 行.
+SQL: SELECT * FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) ORDER BY item_create_time desc LIMIT 10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: Index C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 54 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: Tenso C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 60 行.
+NOTIC: [8] Undefined index: Other C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 61 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-04-25T23:19:59+08:00 ] 127.0.0.1 /toyokou_tenso-japan/service/Admin/Index/shipping.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tns_site` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `tns_item` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `tns_site` WHERE `prty_name` = 'site_name' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: ifCurrent_subMenu C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 78 行.
+NOTIC: [8] Undefined index: username C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 79 行.
+NOTIC: [8] Undefined index: item_status C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 143 行.
+SQL: SELECT * FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) ORDER BY item_create_time desc LIMIT 10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: Index C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 54 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: Tenso C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 60 行.
+NOTIC: [8] Undefined index: Other C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 61 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2015-04-25T23:23:18+08:00 ] 127.0.0.1 /toyokou_tenso-japan/service/Admin/Index/shipping.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `tns_site` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `tns_item` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `tns_site` WHERE `prty_name` = 'site_name' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: ifCurrent_subMenu C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 78 行.
+NOTIC: [8] Undefined index: username C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 79 行.
+NOTIC: [8] Undefined index: item_status C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 143 行.
+SQL: SELECT * FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) ORDER BY item_create_time desc LIMIT 10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: Index C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 54 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: Tenso C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 60 行.
+NOTIC: [8] Undefined index: Other C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 61 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-04-25T23:30:31+08:00 ] 127.0.0.1 /toyokou_tenso-japan/service/Admin/Index/shipping.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `tns_site` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `tns_item` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `tns_site` WHERE `prty_name` = 'site_name' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: ifCurrent_subMenu C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 78 行.
+NOTIC: [8] Undefined index: username C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 79 行.
+NOTIC: [8] Undefined index: item_status C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 143 行.
+SQL: SELECT * FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) ORDER BY item_create_time desc LIMIT 10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: Index C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 54 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: Tenso C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 60 行.
+NOTIC: [8] Undefined index: Other C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 61 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2015-04-25T23:30:48+08:00 ] 127.0.0.1 /toyokou_tenso-japan/service/Admin/Index/shipping.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tns_site` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `tns_item` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `tns_site` WHERE `prty_name` = 'site_name' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: ifCurrent_subMenu C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 78 行.
+NOTIC: [8] Undefined index: username C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 79 行.
+NOTIC: [8] Undefined index: item_status C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 143 行.
+SQL: SELECT * FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) ORDER BY item_create_time desc LIMIT 10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: Index C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 54 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: Tenso C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 60 行.
+NOTIC: [8] Undefined index: Other C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 61 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-04-25T23:32:04+08:00 ] 127.0.0.1 /toyokou_tenso-japan/service/Admin/Index/shipping.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tns_site` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `tns_item` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `tns_site` WHERE `prty_name` = 'site_name' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: ifCurrent_subMenu C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 78 行.
+NOTIC: [8] Undefined index: username C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 79 行.
+NOTIC: [8] Undefined index: item_status C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 143 行.
+SQL: SELECT * FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) ORDER BY item_create_time desc LIMIT 10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Index C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 54 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 57 行.
+NOTIC: [8] Undefined index: Tenso C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 60 行.
+NOTIC: [8] Undefined index: Other C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 61 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\d99a7fd0956854970099a9c107417699.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2015-04-25T23:43:04+08:00 ] 127.0.0.1 /toyokou_tenso-japan/service/Admin/Index/request.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tns_site` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `tns_item` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `tns_site` WHERE `prty_name` = 'site_name' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: ifCurrent_subMenu C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 78 行.
+NOTIC: [8] Undefined index: username C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 79 行.
+NOTIC: [8] Undefined index: item_status C:\wamp\www\toyokou_tenso-japan\service\Admin\Controller\IndexController.class.php 第 109 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND NOT item_status = "final" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "payment" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "shipping" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "confirm" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "receipt" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tns_item` WHERE ( ifRecycle = 1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `tns_item` WHERE ( ifRecycle = 0 AND item_status = "request" ) ORDER BY item_create_time desc LIMIT 10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: Index C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 54 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 57 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 57 行.
+NOTIC: [8] Undefined index: Tenso C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 60 行.
+NOTIC: [8] Undefined index: Other C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 61 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 75 行.
+NOTIC: [8] Undefined index: ifCurrent C:\wamp\www\toyokou_tenso-japan\service\Runtime\Cache\Admin\610ba0de594e0a3b6b1df2f160afccd1.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

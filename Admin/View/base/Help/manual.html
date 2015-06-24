@@ -1,0 +1,38 @@
+<include file="Public:head"/>
+<div id="wrap">
+  <include file="Public:top"/>
+  <div class="container-fluid mainContainer">
+    <div class="row-fluid">
+      <include file="Public:sidebar"/>
+      <div class="span9" style="min-height:600px">
+		<h3>Admin 使用手册</h3>
+		<h4 id="login">登录</h4>
+		<p>系统采用更加安全的 SESSION 方式进行登录处理，由服务器上记录登录信息。关闭当前的窗口或 1 小时无页面切换操作都将自动登出系统。</p>
+		<h4 id="layout">页面布局</h4>
+		<p>系统页面分为头部主导航、右侧子导航与左侧内容。</p>
+		<p>主导航各项分别为:</p>
+		<ul>
+			<li>管理首页: 主要的操作步骤
+			<li>查询统计: 用于辅助操作
+			<li>超级后台: 用于高级操作，存在一些操作风险，请谨慎操作
+			<li>营销管理: 用于管理广告等信息
+			<li>系统管理: 对系统的设置进行管理，包括站点信息、管理员信息、运费等
+		</ul>
+		<div class="help-block">* 以上功能部分未列入本版本的开发计划中，将会在将来的版本中加入。</div>
+		<h4 id="pkg_status">物品状态</h4>
+		<ul>
+			<li>request (已入库, 待转运)</li>
+			<li>merge (待合箱)</li>
+			<li>payment (待收款)</li>
+			<li>shipping (待发货)</li>
+			<li>confirm (已发货，待通知客户)</li>
+		</ul>
+        </div><!--/row-->
+      </div><!--/span-->
+    </div><!--/row-->
+  </div><!--/.fluid-container-->
+  <div style="clear:both"></div>
+  <div id="push"></div>
+</div>
+<include file="Public:footer"/>
+<include file="Public:javascript"/>

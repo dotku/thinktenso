@@ -1,0 +1,37 @@
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+	<div class="container-fluid">
+	  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	  <a class="brand" href="__ROOT__/{$Think.MODULE_NAME}">{$siteName}管理后台</a>
+	  <div class="nav-collapse collapse">
+		<p class="navbar-text pull-right">
+		  <a href="#" class="navbar-link" title="进入个人界面(计划中)"><?=$_SESSION['member']['nickname']?>(<?=$_SESSION['member']['username']?>)</a>
+      <a href="__ROOT__/Admin/logout" class="navbar-link" style="" title="退出">[退出]</a>
+      <a href="__ROOT__/Admin/help" class="icon-question-sign icon-white navbar-link" style="margin-top: 4px" title="帮助"></a>
+      
+      
+		</p>
+		<ul class="nav">
+			<li class="{$ifCurrent['Index']}"><a href="__ROOT__/{$Think.MODULE_NAME}">后台首页</a></li>
+			<li class="{$ifCurrent['Tenso']}"><a href="__ROOT__/{$Think.MODULE_NAME}/Tenso">查询统计</a></li>
+			<li class="{$ifCurrent['Tenso']}"><a href="__ROOT__/{$Think.MODULE_NAME}/Super">超级后台</a></li>
+			<li class="{$ifCurrent['Other']}"><a href="__ROOT__/{$Think.MODULE_NAME}/Other">其他操作</a></li>
+			<li class="dropdown">
+				<a href="__ROOT__/{$Think.MODULE_NAME}" class="dropdown-toggle" data-toggle="dropdown">快捷菜单 <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					
+					<volist name="subMenu" id="vo">
+						<li class="{$vo['ifCurrent']}"><a href="__ROOT__/{$Think.MODULE_NAME}/{$Think.CONTROLLER_NAME}/{$vo['key']}.html#first">{$vo['name']}</a></li>
+					</volist>
+				</ul>
+			</li>
+		</ul>
+	  </div><!--/.nav-collapse -->
+	</div>
+  </div>
+</div>

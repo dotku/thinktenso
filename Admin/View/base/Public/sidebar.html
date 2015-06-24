@@ -1,0 +1,14 @@
+<div class="span3" id="sidebar">
+  <div class="well sidebar-nav affix">
+	<ul class="nav nav-list">
+		<li class="nav-header"><h4>{$colTitle}</h4></li>
+		<?php
+			foreach($subMenu as $key => $vo){
+		?>
+			<li class="<?=$vo['ifCurrent']?>"><a href="__ROOT__/{$Think.MODULE_NAME}/{$Think.CONTROLLER_NAME}/<?=$key?>.html#first"><?=$vo['name']?></a></li>
+		<?php
+			}
+		?>
+	</ul>
+  </div><!--/.well -->
+</div><!--/span-->

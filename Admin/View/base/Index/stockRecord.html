@@ -1,0 +1,87 @@
+<h3>入库记录</h3>
+<table class="table table-hover" id="pkgRecord">
+	<caption>包裹记录</caption>
+    <tr>
+        <th style="width:90px">包裹编号</th>
+        <th style="width:156px">来源编号</th>
+		<th title="即 UID">客户编号</th>
+		
+        <th title="单位: g">包裹重量</th>
+        <th>收货员</th>
+		<th>货物状态</th>
+        <th>登记时间</th>
+		<th>操作</th>
+    </tr>
+    <volist name="tablePkg" id="vo">
+    <tr >
+        <td>{$vo.pkg_id}</td>
+        <td>{$vo.pkg_orig_number}</td>
+		<td>{$vo.user_id}</td>
+		
+        <td>{$vo.pkg_weight}</td>
+        <td>{$vo.clerk_name}</td>
+		<td>{$vo.pkg_status}</td>
+		
+        <td>{$vo.pkg_create_time}</td>
+		<td><input type="button" value="删除" id="checkAll" onClick="recycle('pkg', '{$vo.pkg_id}')"></td>
+    </tr>
+    </volist>
+</table>
+<table class="table table-hover">
+	<caption>合箱记录</caption>
+	<tr>
+        <th style="width:90px">合箱编号</th>
+        <th style="width:156px">包裹编号</th>
+		<th title="即 UID">客户编号</th>
+		
+        <th title="单位: g">合箱重量</th>
+        <th>合箱员</th>
+		<th>货物状态</th>
+        <th>登记时间</th>
+		<th>操作</th>
+    </tr>
+	<volist name="tableBox" id="vo">
+    <tr >
+        <td>{$vo.box_id}</td>
+        <td>{$vo.pkg_ids}</td>
+		<td>{$vo.user_id}</td>
+        
+		<td>{$vo.box_weight}</td>
+        <td>{$vo.clerk_name}</td>
+		<td>{$vo.box_status}</td>
+        <td>{$vo.box_create_time}</td>
+		<td><input type="button" value="删除" id="checkAll" onClick="recycle('box', '{$vo.box_id}')"></td>
+    </tr>
+    </volist>
+</table>
+<table class="table table-hover">
+	<caption>物品记录</caption>
+	<tr>
+        <th style="width:90px">物品编号</th>
+		<th style="width:156px">物品名称</th>
+        <th style="width:77px">物品数量</th>
+		<th style="width:114px">包裹编号</th>
+		<th style="width:114px">合箱编号</th>
+		
+        <th>登记时间</th>
+		<th>物品状态</th>
+    </tr>
+	<volist name="tableGoods" id="vo">
+    <tr >
+        <td>{$vo.goods_id}</td>
+		<td>{$vo.goods_title}</td>
+		<td>{$vo.goods_num}</td>
+        <td>{$vo.pkg_id}</td>
+        <td>{$vo.box_id}</td>
+		
+        <td>{$vo.goods_create_time}</td>
+		<td>{$vo.goods_status}</td>
+    </tr>
+    </volist>
+</table>
+<div style="margin-bottom: 20px">
+* 以上内容仅显示最新的 10 个记录<br>
+* <a href="__ROOT__/Admin/help/manual#pkg_status">请查看手册来了解包裹状态说明</a><br>
+* 物品无法直接删除，只能通过编辑相应的包裹来编辑删除物品
+</div>
+<div id="newTable"></div>

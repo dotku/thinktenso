@@ -1,0 +1,89 @@
+<form method="post" id="formMerge">
+	<fieldset disabled="disabled">
+	<legend>合箱编辑</legend>
+	<table class="table table-bordered">
+		<tr>
+			<th>运单编号
+			<td>
+				<div><input class="form-control-static" 
+					id="input_box_id"
+					name="box_id"
+					value=""
+					type="text" readonly></div>
+				<div>(* 以上号码仅供参考，最终号码由系统自动生成，可能与该号码有所不同)</div>
+			</td>
+		</tr>
+		<tr>
+			<th>包裹编号
+			<td>
+				<input type="text" id="input_pkg_ids" name="pkg_ids" class="input-xxlarge" required="required" readonly="0">
+			</td>
+		</tr>
+		<tr>
+			<th>货物内容
+			<td>
+				<table class="table table-bordered">
+					<tr>
+						<th>物品标题
+						<th>物品数量
+					<tr>
+						<td><input type="text" class="input-xxlarge">
+						<td><input type="text" class="input-small">
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<th>收件人
+			<td>
+				<input type="text" id="pkg_ship_receiver" name="pkg_ship_receiver" class="input-xxlarge" required="required" readonly>
+			</td>
+		</tr>
+		<tr>
+			<th>邮寄地址
+			<td>
+				<input type="text" id="pkg_ship_address" name="pkg_ship_address" class="input-xxlarge" required="required" readonly>
+			</td>
+		</tr>
+		<tr>
+			<th>电话号码
+			<td>
+				<input type="text" id="pkg_ship_phone" name="pkg_ship_phone" class="input-xxlarge" required="required" readonly>
+			</td>
+		</tr>
+		
+		<tr class="singleShip">
+			<th>邮寄方式
+			<td>
+				<select name="pkg_ship_way" readonly>
+					<option value="ems">EMS
+					<option value="sal">SAL
+					<option value="boat">海运
+					<option value="air">空运
+				</select>
+				<a href="http://www.tenso-japan.com/service/toolbox/?mod=calculator" target="_blank">价格计算器</a>
+			</td>
+		</tr>
+		<tr class="singleShip" id="row_ship_pkg_fee">
+			<th>价格计算
+			<td><input type="text" id="pkg_ship_fee" name="pkg_ship_fee" placeholder="请填写最终费用" class="input-xxlarge" readonly> 日元</td>
+		</tr>
+		<tr class="singleShip" id="row_ifNotice">
+			<th>是否通知
+			<td>
+				<input type="checkbox" id="ifNotice" name="ifNotice" readonly> 要通知 (*点击 提交 时将向客户发送邮件通知)
+			</td>
+		</tr>
+		<tr class="singleShip" id="row_ship_user_email">
+			<th>客户邮箱
+			<td><input type="email" id="pkg_ship_email" name="pkg_ship_email" class="input-xxlarge" placeholder="sample@email.com" readonly></input></td>
+		</tr>
+		<tr class="singleShip" id="row_ship_user_notice">
+			<th>邮件通知
+			<td>
+				<textarea id="user_notice" name="user_notice" class="input-xxlarge" style="height: 200px" readonly></textarea></td>
+		</tr>
+	</table>
+	<input type="hidden" name="pkg_status" value="payment"/>
+	<input type="submit" value=" 提交 "/>
+	</fieldset>
+</form>

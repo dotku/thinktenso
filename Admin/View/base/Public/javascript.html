@@ -1,0 +1,210 @@
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script-->
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/jquery.js"></script>
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/jquery.scrollTo.js"></script>
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-transition.js"></script>
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-alert.js"></script>
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-modal.js"></script>
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-dropdown.js"></script>
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-scrollspy.js"></script>
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-tab.js"></script>
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-tooltip.js"></script>
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-popover.js"></script>
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-button.js"></script>
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-collapse.js"></script>
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-carousel.js"></script>
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-typeahead.js"></script>
+<script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/tensoJapan.js"></script>
+<script>
+
+
+
+/**
+* 客户信息处理 (request)
+*/
+/*
+var userInfo = '';
+
+$("#formRequest").load(function() {
+	$.getJSON(
+		"http://www.tenso-japan.com/tenso/api.php/discuz/getMember/" + $("#input_user_id").val(),
+		function(data) {
+			if (!$("#input_user_id").val()) {
+				alert('请输入用户编号(UID)');
+			}
+			if (!data) {
+				alert('无此用户');
+			};
+		}
+	);
+});
+
+$("#formRequest #pkg_id").load(function() {
+	var uid = $("#pkg_" + $(this).val()).val();
+	getReceiver(uid, "#pkg_ship_receiver");
+	getAddress(uid, "#pkg_ship_address");
+	getPhone(uid, "#pkg_ship_phone");
+	getEmail(uid, "#pkg_ship_email");
+});
+
+$("#formRequest #pkg_id").change(function() {
+	var uid = $("#pkg_" + $(this).val()).val();
+	getReceiver(uid, "#pkg_ship_receiver");
+	getAddress(uid, "#pkg_ship_address");
+	getPhone(uid, "#pkg_ship_phone");
+	getEmail(uid, "#pkg_ship_email");
+});
+
+// 合箱处理
+$("#formRequest #ifMerge").change(function() {
+	if($(this).prop("checked")){
+		$("#row_ship_pkg_fee").hide();
+		$("#row_ifNotice").hide();
+		$("#row_ship_user_email").hide();
+		$("#row_ship_user_notice").hide();
+		$("#pkg_status").val("merge");
+	} else {
+		$("#row_ship_pkg_fee").show();
+		$("#row_ifNotice").show();
+		$("#row_ship_user_email").show();
+		$("#row_ship_user_notice").show();
+		$("#pkg_status").val("payment");
+	}
+});
+
+// 通知邮件处理
+$("#formRequest #ifNotice").change(function() {
+	if(!$(this).prop("checked")){
+		$("#row_ship_user_email").hide();
+		$("#row_ship_user_notice").hide();
+	} else {
+		$("#row_ship_user_email").show();
+		$("#row_ship_user_notice").show();
+	}
+});
+
+function getReceiver(uid, jqTarget) {
+	$.getJSON(
+		"http://www.tenso-japan.com/tenso/api.php/discuz/getMember/" + uid,
+		function(data) {
+			$(jqTarget).val(data.realname);
+		}
+	);
+}
+
+function getAddress(uid, jqTarget) {
+var address = '';
+console.log(uid);
+$.ajax({
+		url: "http://www.tenso-japan.com/tenso/api.php/discuz/getMember/" + uid,
+		dataType: 'json',
+		async: false,
+		success: function(data) {
+			address = data.address;
+			console.log(data);
+		}
+	});
+	console.log(address);
+	/*
+	$.getJSON(
+		"http://www.tenso-japan.com/tenso/api.php/discuz/getMember/" + uid,
+		function(data) {
+			$(jqTarget).val(data.address);
+		}
+	);
+}
+
+function getPhone(uid, jqTarget) {
+	$.getJSON(
+		"http://www.tenso-japan.com/tenso/api.php/discuz/getMember/" + uid,
+		function(data) {
+			$(jqTarget).val(data.mobile);
+		}
+	);
+}
+
+function getEmail(uid, jqTarget) {
+	$.getJSON(
+		"http://www.tenso-japan.com/tenso/api.php/discuz/getMember/" + uid,
+		function(data) {
+			$(jqTarget).val(data.email);
+		}
+	);
+}*/
+
+// Checkbox 全选 
+$(".checkAll").click(function() { 
+    var checkFlag = $(this).prop("checked"); 
+    $(this).closest("table").find("input[type='checkbox']").each(function() { 
+        $(this).prop("checked", checkFlag); 
+    }); 
+});
+
+$("#bundleDelete").click(function() {
+	
+});
+$("#bundleRecycle").click(function() {
+	var sMsg = '';
+	$(".item").each(function(i, o) {
+		if($(o).prop("checked")){
+			//alert($(o).prop("checked"));
+			recycle($(o).val());
+		}
+	});
+	location.reload();
+});
+
+function remove(id) {
+    $.post("{:U('/Tenso')}/delete/"+id);
+    location.reload();
+}
+
+function recycle(type, id) {
+	var sMsg;
+    $.ajax({
+		url: "__ROOT__/Admin/Tenso/recycle/"+ type + "/" + id,
+		dataType: "json",
+		success: function(data) {
+			alert(data.msg);
+			location.reload();
+		}
+	});
+}
+
+function restore(id) {
+    $.ajax({
+        url: "__ROOT__/Admin/Tenso/restore/" + id,
+        dataType: "json",
+        success: function(data) {
+            alert(data.msg);
+            location.reload();
+        }
+    });
+}
+
+function updateRecord() {
+	 $sHTML = '<table class="table table-hover" id="stockRecord"><tr><th>到货编号</th><th>来源编号</th><th title="即 UID">客户编号</th><th>货物重量(g)</th><th>收货员</th><th>登记时间</th><th>操作</th></tr>';
+	 $sRows = '';
+	 $.ajax({
+        url: "__ROOT__/Admin/Public/getItems",
+        dataType: "json",
+        success: function(data) {
+			console.log(data);
+			/*
+			for(i = 0; i < data.length; i ++) {
+				$sRows += '<tr>'
+					+ '<td>' + data[i].pkg_id +'</td>'
+					+ '<td>' + data[i].pkg_orig_number + '</td>'
+					+ '<td>' + data[i].user_id + '</td>'
+					+ '<td>' + data[i].pkg_weight + '</td>'
+					+ '<td>' + data[i].clerk_name + '</td>'
+					+ '<td>' + data[i].pkg_create_time + '</td>'
+					+ '<td><input type="button" value="删除" id="checkAll" onClick="recycle(' + data[i].pkg_id + ')"></td>'
+					+ '</tr>';
+			}*/
+        }
+    });
+}
+</script>

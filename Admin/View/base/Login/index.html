@@ -1,0 +1,76 @@
+<include file="Public:head"/>
+<style type="text/css">
+  /* 隐藏头部导航 */    
+  .nav-collapse {
+    display: none;
+  }
+  .form-group {
+    margin-top: 5px;
+  }
+  .mainContainer {
+    padding-top: 100px;
+  }
+  @media (max-height: 568px) {
+    .mainContainer {
+      padding-top: 40px;
+      min-height: 200px;
+    }
+    .btn {
+      display: none!important;
+    }
+    .navbar .
+  }
+  @media (max-height: 320px) {
+    .mainContainer {
+      padding-top: 0px;
+    }
+    footer {
+      display: none;
+    }
+  }
+  footer {
+    padding-bottom: 10px;
+  }
+
+</style>
+<div id="wrap">
+    <include file="Public:top"/>
+    <div class="mainContainer text-center container-fluid" >
+          <div style="" class="offset4 span4" >
+            <form class="form-horizontal" method="post" action="" id="loginForm" style="width:220px; margin: 0 auto">
+              <h2 class="form-signin-heading">后台登陆</h2>
+              <hr style="margin:0 auto;">
+                <div class="form-group text-left">
+                    <label for="username" class="col-xs-1">管理员</label>
+                    <input id="username" name="username" class="form-control" type="text" placeholder="请输入管理员用户名" value="admin">
+                </div>
+                <div class="form-group text-left">
+                    <label for="password" class="col-xs-1">密码</label>
+                    <input id="password" name="password" type="password" class="form-control" placeholder="请输入密码">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value=" 登录 ">
+                </div>
+            </form>
+          </div><!--/row-->
+    </div>
+    <div id="push"></div>
+</div>
+    <include file="Public:footer"/>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/jquery.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-transition.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-alert.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-modal.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-dropdown.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-scrollspy.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-tab.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-tooltip.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-popover.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-button.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-collapse.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-carousel.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-typeahead.js"></script>

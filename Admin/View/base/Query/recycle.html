@@ -1,0 +1,53 @@
+<include file="Public:head"/>
+<style type="text/css">
+  .sidebar-nav {
+	padding: 9px 0;
+  }
+
+  @media (max-width: 980px) {
+	/* Enable use of floated navbar text */
+	.navbar-text.pull-right {
+	  float: none;
+	  padding-left: 5px;
+	  padding-right: 5px;
+	}
+  }
+</style>
+<div id="wrap">
+<include file="Public:top"/>
+    <div class="mainContainer container-fluid">
+      <div class="row-fluid">
+		<include file="Public:sidebar"/>
+        <div class="span9">
+
+          <div class="row-fluid">
+            <h3>回收站</h3>
+            <div class="minh166">
+            <table class="table table-hover">
+				<tr>
+					<th>到货编号</th>
+					<th>客户编号(UID)</th>
+					<th>货物重量(g)</th>
+					<th>破损确认</th>
+					<th>收货员</th>
+                    <th>快捷操作</th>
+				</tr>
+                <volist name="table" id="vo">
+                <tr>
+					<td>{$vo.pkg_id}</td>
+					<td>{$vo.user_id}</td>
+					<td>{$vo.pkg_weight}</td>
+					<td>{$vo.pkg_damage}</td>
+					<td>{$vo.clerk_name}</td>
+                    <td><input type="button" value="还原" onclick="restore('{$vo.pkg_id}')"></td>
+				</tr>
+                </volist>
+			</table>
+            </div>
+          </div><!--/row-->
+        </div><!--/span-->
+      </div><!--/row-->
+    </div><!--/.fluid-container-->
+</div>
+<include file="Public:footer"/>
+<include file="Public:javascript"/>

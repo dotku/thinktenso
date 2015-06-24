@@ -1,0 +1,2 @@
+<?
+$arrDB = $arrDBLocal;

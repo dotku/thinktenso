@@ -1,0 +1,83 @@
+<include file="Public:head"/>
+    <style type="text/css">
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    </style>
+<div id="#wrap">
+    <include file="Public:top"/>
+    <div class="mainContainer container-fluid">
+      <div class="row-fluid">
+		<include file="Public:sidebar"/>
+        
+        <div class="span9">
+		  
+          <div class="row-fluid">
+			<h2>操作记录</h2>
+            <p style="color:red">* 由于时间有限，本功能延迟开发，以下记录仅供演示</p>
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>时间
+                    <th>用户
+                    <th>操作
+                </tr>
+                <tr>
+                    <td><?=date('Y-m-d h:i:sa')?>
+                    <td>管理员(Admin)
+                    <td> {操作} {对象} {结果}
+                </tr>
+                <tr>
+                    <td><?=date('Y-m-d h:i:sa')?>
+                    <td>管理员(Admin)
+                    <td>例子: {更新了} {站点操作 的 站点名称} {修改 转运 为 丰港转运}
+                </tr>
+                <tr>
+                    <td><?=date('Y-m-d h:i:sa')?>
+                    <td>管理员(Admin)
+                    <td>例子: {更新了} {管理员 的 密码}
+                </tr>
+                <tr>
+                    <td><?=date('Y-m-d h:i:sa')?>
+                    <td>管理员(Admin)
+                    <td>例子: {删除了} {转运记录 的 xxx 记录}
+                </tr>
+                <tr>
+                    <td><?=date('Y-m-d h:i:sa')?>
+                    <td>管理员(Admin)
+                    <td>例子: {更新了} {转运 的 xxx 记录} {修改 xxx 记录 的 收货员(张三) 为 李四}
+                </tr>
+            </table>
+    
+          </div><!--/row-->
+        </div><!--/span-->
+      </div><!--/row-->
+    </div>
+    <div id="push"></div>
+</div>
+<include file="Public:footer"/>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/jquery.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-transition.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-alert.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-modal.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-dropdown.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-scrollspy.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-tab.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-tooltip.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-popover.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-button.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-collapse.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-carousel.js"></script>
+    <script src="__PUBLIC__/{$Think.MODULE_NAME}/{$Think.THEME_NAME}/js/bootstrap-typeahead.js"></script>

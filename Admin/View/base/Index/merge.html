@@ -1,0 +1,236 @@
+<include file="Public:head"/>
+<style>
+	select {
+		width: auto;
+	}
+</style>
+<div id="wrap">
+<include file="Public:top"/>
+    <div class="mainContainer container-fluid">
+      <div class="row-fluid">
+      <include file="Public:sidebar"/>
+        <div class="span9">
+          <div class="row-fluid">
+			<h3>合箱处理</h3>
+			<p>通过合箱，用户可以把多个包裹合并到一个箱子中以解决国际转运的费用。后期 (预计 7~8 月推出) 将由用户自行操作合箱步骤，后台也可以辅助操作合箱，目前则仅能通过后台来操作合箱步骤。[<a href="#steps">合箱步骤说明</a>]</p>
+			<fieldset>
+				<legend>选择合箱</legend>
+					<table class="table">
+					<caption>目标合箱</caption>
+					<tr>
+						<th>选择
+						<th>合箱编号
+						<th>用户编号
+						<th>合箱状态
+						<th>包含包裹
+						<th>包含物品
+						<th>创建时间
+						<th>操作
+					</tr>
+				<volist name="tableBox" id="vo">
+					<tr>
+						<td><input class="box-selector" type="checkbox" 
+							data-box_id="{$vo.box_id}"
+							data-user_id="{$vo.user_id}">
+						<td>{$vo.box_id}
+						<td>{$vo.user_id}
+						<td>{$vo.box_status}
+						<td>{$vo.pkg_ids}
+						<td>{$vo.goods}
+						<td>{$vo.box_create_time}
+						<td><input type="button" value="删除" onClick="recycle('box', '{$vo.box_id}')"></td>
+					</tr>
+				</volist>
+					<tr>
+						<td colspan="7"><a href="javascript:void(0)" title="新增一个空合箱" onclick="newbox()">新增</a> | 
+						下一页 上一页 
+					</tr>
+				</table>
+				<table class="table">
+					<caption>来源包裹</caption>
+					<tr>
+						<th>选择
+						<th>包裹编号
+						<th>用户编号
+						<th>来源编号
+						<th>包裹状态
+						<th>相关合箱
+						<th>入库时间
+						<th>操作
+					</tr>
+				<volist name="tablePkg" id="vo">
+					<tr>
+						<td><input class="pkg-selector" type="checkbox" 
+							data-pkg_id="{$vo.pkg_id}"
+							data-user_id="{$vo.user_id}">
+						<td>{$vo.pkg_id}
+						<td class="uid">{$vo.user_id}
+						<td>{$vo.pkg_orig_number}
+						<td>{$vo.pkg_status}
+						<td class="cell-merge">{$vo.merge_ids}
+						<td>{$vo.pkg_create_time}
+						<td><input type="button" value="删除" id="checkAll" onClick="recycle('pkg', '{$vo.pkg_id}')"></td>
+					</tr>
+				</volist>
+					<tr>
+						<td colspan="7"><input type="checkbox" class="checkAll"> 全选 | 下一页 上一页
+					</tr>
+				</table>
+				<div style="margin-bottom: 20px; text-align: center"><input type="button" value=" 进行合箱 " id="button-merge"></div>
+			</fieldset>
+			<div class="help-block">
+			<div>* 请先选择需要合箱的包裹，然后选择对应的目标合箱，点击 "进行合箱" 进行操作[<a href="#steps">详细</a>]</div>
+			<div>* 最多只能合并 10 个包裹</div>
+			</div>
+			
+			<include file="mergeForm"/>
+			<volist name="table" id="vo">
+				<input class="uid" type="hidden" id="pkg_{$vo.pkg_id}" value="{$vo.user_id}"/>
+			</volist>
+          </div><!--/row-->
+			<include file="mergeSteps"/>
+        </div><!--/span-->
+      </div><!--/row-->
+    </div><!--/.fluid-container-->
+	<div id="push"><!--FOR STICK FOOTER--></div>
+</div>
+<include file="Public:footer"/>
+<include file="Public:javascript"/>
+<script>
+var oDataList = new Object();
+
+/**
+* 事件处理
+*/
+
+/* 合箱选择页面 */
+$("#button-merge").click(function() {
+	var iBoxNum = $(".box-selector:checked").length;
+	var iPkgNum = $(".pkg-selector:checked").length;
+	var iPkgUID = $(".pkg-selector:checked").attr("data-user_id");
+	var sMsg = "";
+	
+	// 检查合箱选择
+	if (iBoxNum == 1) {
+		boxFlag = true;
+	} else if (iBoxNum > 1) {
+		sMsg += "一次只能选择一个合箱进行操作\n";
+	} else if (iBoxNum == 0) {
+		sMsg += "请至少选择一个合箱\n";
+	}
+	
+	// 检查包裹选择
+	if (iPkgNum >= 1) {
+		pkgFlag = true;
+	} else {
+		sMsg += "请至少选择 1 个包裹进行操作\n";
+	}
+	
+	// 检查包裹用户
+	$(".pkg-selector:checked, .box-selector:checked").each(function(){
+		if ($(this).attr("data-user_id") == 0) {
+			$(this).attr("data-user_id", iPkgUID);
+		} else if ($(this).attr("data-user_id") != iPkgUID) {
+			sMsg += "包裹和合箱必须是属于同一个用户\n";
+		}
+	});
+	
+	// 进入编辑状态
+	if (!sMsg) {
+		$("#formMerge fieldset[disabled]").removeAttr("disabled");
+		$("#formMerge [readonly]").removeAttr("readonly");
+		$(window).scrollTop($("#formMerge").offset().top-52);
+		fillForm();
+	} else {
+		alert(sMsg);
+	}
+});
+
+/* 合箱编辑页面 */
+function fillForm() {
+	// 合箱编号
+	$("#input_box_id").val($(".box-selector:checked").attr("data-box_id"));
+	$("#input_box_id").attr("readonly", "readonly");
+	
+	// 包裹编号
+	var arrPkgIDs = Array();
+	$(".pkg-selector:checked").each(function() {
+		arrPkgIDs.push($(this).attr("data-pkg_id"));
+	});
+	$("#input_pkg_ids").val(arrPkgIDs.join(", "));
+	$("#input_pkg_ids").attr("readonly", "readonly");
+}
+// 货物切换
+$("#pkg_id").change(function(){
+	if ($("#pkg_id").val()) {
+		init();
+	}
+});
+
+// 合箱处理
+$("#formRequest #ifMerge").change(function() {
+	if($(this).prop("checked")){
+		$(".singleShip").hide();
+		$("#pkg_status").val("merge");
+	} else {
+		$(".singleShip").show();
+		$("#pkg_status").val("payment");
+	}
+});
+/**
+* 函数区
+*/
+// 页面初始化处理
+function init() {
+	// 美化表格内容
+	$(".cell-merge").each(function(i, o) {
+		if ($(o).text() == 0) {
+			$(o).text("无内容");
+		}
+	});
+	/*
+	$(".uid").each(function(i, o){
+		$.ajax({
+			url: "http://www.tenso-japan.com/tenso/api.php/discuz/getMember/" + $(o).val(),
+			//async: false,
+			dataType: 'json',
+			success: function(data) {
+				eval("oDataList.uid" + data.uid +" = data");
+				autoFill(oDataList);
+			}
+		})
+	});
+	*/
+}
+function newbox() {
+	$.post("__URL__/merge/newbox");
+	location.reload();
+}
+function autoFill(obj) {
+	eval("var dataObj = obj.uid" + getUID());
+	//console.log(dataObj);
+	$("#pkg_ship_receiver").val(dataObj.realname || "");
+	$("#pkg_ship_address").val(dataObj.address);
+	$("#pkg_ship_phone").val(dataObj.mobile || dataObj.phone || ""); // 手机优先
+	$("#pkg_ship_email").val(dataObj.email);
+	
+	$("#user_notice").val("您好，"+ dataObj.realname +" 先生/女士 \n\n"
+		+ "您的包裹已入库，信息如下:\n\n" 
+		+ "  收件人名: " + (dataObj.realname || "") + "\n"
+		+ "  邮寄地址: " + (dataObj.address) + "\n"
+		+ "  手机号码: " + (dataObj.mobile || dataObj.phone || "") + "\n"
+		+ "  转运金额: " + "\n\n"
+		+ "请尽快支付转运费用 " + "\n"
+		+ "支付链接: http://item.taobao.com/item.htm?spm=686.1000925.0.0.vg4okg&id=44809946055" + "\n\n"
+		+ "丰港转运客服中心" + "\n"
+		+ "QQ 2197143208" + "\n"
+		+ "EM support@tenso-japan.com" + "\n"
+		+ "WB http://www.tenso-japan.com" + "\n"
+		
+	);
+}
+
+function getUID() {
+	return $("#pkg_" + $("#pkg_id").val()).val();
+}
+</script>

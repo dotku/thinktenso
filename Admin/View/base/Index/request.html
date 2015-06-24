@@ -1,0 +1,244 @@
+<include file="Public:head"/>
+<style>
+	select {
+		width: auto;
+	}
+</style>
+<div id="wrap">
+<include file="Public:top"/>
+    <div class="mainContainer container-fluid">
+      <div class="row-fluid">
+      <include file="Public:sidebar"/>
+        <div class="span9">
+          <div class="row-fluid">
+            <h3>客户信息</h3>
+			<form method="post" id="formRequest">
+				<table class="table table-bordered">
+					<tr>
+						<th>入库货物
+						<td>
+								<select name="pkg_id" id="pkg_id">
+									<volist name="tablePkg" id="vo">
+										<option value="{$vo.pkg_id}">入库编号: {$vo.pkg_id} | 
+											来源编号: {$vo.pkg_orig_number} |
+											客户编号: {$vo.user_id} |
+											货物重量: {$vo.pkg_weight}
+										</option>
+									</volist>
+									<option value="">无</option>
+								</select>
+						</td>
+					</tr>
+					<tr class="mergeShip">
+						<th>货物内容
+						<td>
+							<table class="table table-bordered" id="goods_table">
+								<tr>
+									<th>产品信息
+									<th>数量
+									<th>价值
+								</tr>
+								<tr>
+									<td><input type="text" name="goods_title[]" class="input-xxlarge">
+									<td><input type="text" name="goods_num[]" class="input-small">
+									<td><input type="text" name="goods_price[]" class="input-small">
+								</tr>
+							</table>
+							[<a href="javascript:void(0);" onclick="addRow()">+</a>]
+						</td>
+					</tr>
+					<tr>
+						<th>是否合箱
+						<td><input type="checkbox" id="ifMerge" name="ifMerge" checked> 要合箱
+							<div class="help-block">
+								选择合箱，提交后，包裹进入合箱步骤；不选择合箱，包裹直接进入支付步骤，跳过合箱。
+							</div>
+						</td>
+					</tr>
+					<tr class="singleShip">
+						<th>收件人
+						<td>
+							<input type="text" id="pkg_ship_receiver" 
+								name="pkg_ship_receiver" 
+								placeholder="请输入收件人姓名"
+								class="input-xxlarge">
+						</td>
+					</tr>
+					<tr class="singleShip">
+						<th>邮寄地址
+						<td>
+							<input type="text" id="pkg_ship_address" 
+								name="pkg_ship_address" 
+								placeholder="请输入收件人地址"
+								class="input-xxlarge">
+						</td>
+					</tr>
+					<tr class="singleShip">
+						<th>电话号码
+						<td>
+							<input type="text" id="pkg_ship_phone" 
+								name="pkg_ship_phone" 
+								placeholder="请输入收件人联系电话(手机或座机)"
+								class="input-xxlarge">
+						</td>
+					</tr>
+					<tr class="singleShip">
+						<th>邮寄方式
+						<td>
+							<select name="pkg_ship_way">
+								<option value="ems">EMS
+								<option value="sal">SAL
+								<option value="boat">海运
+								<option value="air">空运
+							</select>
+							<a href="http://www.tenso-japan.com/service/toolbox/?mod=calculator" target="_blank">价格计算器</a>
+						</td>
+					</tr>
+					<tr class="singleShip" id="row_ship_pkg_fee">
+						<th>价格计算
+						<td><input type="text" id="pkg_ship_fee" name="pkg_ship_fee" 
+							placeholder="请填写最终费用" 
+							class="input-xxlarge"> 日元</td>
+					</tr>
+					<tr class="singleShip" id="row_ifNotice">
+						<th>是否通知
+						<td>
+							<input type="checkbox" id="ifNotice" name="ifNotice"> 要通知 
+							<div class="help-block">
+								<ul>
+									<li>选中后，点击 提交 时将向客户发送邮件通知
+									<li style="color: tomato">待完成功能，稍后加入
+								</ul>
+							</div>
+						</td>
+					</tr>
+					<tr class="singleShip" id="row_ship_user_email">
+						<th>客户邮箱
+						<td><input type="email" id="pkg_ship_email" name="pkg_ship_email" class="input-xxlarge" placeholder="sample@email.com"></input></td>
+					</tr>
+					<tr class="singleShip" id="row_ship_user_notice">
+						<th>邮件通知
+						<td>
+							<textarea id="user_notice" name="user_notice" class="input-xxlarge" style="height: 200px"></textarea></td>
+					</tr>
+				</table>
+				<input type="hidden" id="pkg_status" name="pkg_status" value="merge"/>
+				<input type="submit" value=" 提交 "/>
+			</form>
+			<volist name="table" id="vo">
+				<input class="uid" type="hidden" id="pkg_{$vo.pkg_id}" value="{$vo.user_id}"/>
+			</volist>
+			
+          </div><!--/row-->
+        </div><!--/span-->
+			
+      </div><!--/row-->
+    </div><!--/.fluid-container-->
+
+	<div id="push"><!--FOR STICK FOOTER--></div>
+</div>
+<include file="Public:footer"/>
+<include file="Public:javascript"/>
+<script>
+/**
+* 初始化
+*/
+
+var oDataList = new Object();
+
+// 预载操作，获得用户信息
+window.onload = function() {
+	$(".uid").each(function(i, o) {
+		$.ajax({
+			url: "http://www.tenso-japan.com/tenso/api.php/discuz/getMember/" + $(o).val(),
+			dataType: 'json',
+			success: function(data) {
+				if (data) {
+					eval("oDataList.uid" + data.uid +" = data");
+				}
+			}
+		});
+	});
+}
+
+// 载入操作
+$(function(){
+	init();
+});
+
+/**
+* 事件处理
+*/
+// 货物切换
+$("#pkg_id").change(function(){
+	if ($("#pkg_id").val()) {
+		init();
+	}
+});
+
+// 合箱处理
+$("#formRequest #ifMerge").change(function() {
+	if($(this).prop("checked")){
+		$(".singleShip").hide();
+		$(".mergeShip").show();
+		$("#pkg_status").val("merge");
+		console.log($("#pkg_status").val());
+	} else {
+		$(".singleShip").show();
+		$(".singleShip input").
+		$(".mergeShip").hide();
+		$("#pkg_status").val("payment");
+		autoFill(oDataList);
+	}
+});
+/**
+* 函数区
+*/
+// 页面初始化处理
+function init() {
+	// 默认下合箱
+	$(".singleShip").hide();
+	$(".mergeShip").show();
+	$("#formRequest #ifMerge").prop("checked", true);
+}
+
+// add row for '#goods_table'
+function addRow() {
+	var sRowHTML = '<tr>'
+		+ '<td><input type="text" name="goods_title[]" class="input-xxlarge">'
+		+ '<td><input type="text" name="goods_num[]" class="input-small" value="1">'
+		+ '<td><input type="text" name="goods_price[]" class="input-small" value="0">'
+		+ '</tr>';
+	$("#goods_table").append(sRowHTML);
+}
+
+function autoFill(obj) {
+	if (obj) {
+		eval("var dataObj = obj.uid" + getUID());
+		//console.log(dataObj);
+		$("#pkg_ship_receiver").val(dataObj.realname || "");
+		$("#pkg_ship_address").val(dataObj.address || "");
+		$("#pkg_ship_phone").val(dataObj.mobile || dataObj.phone || ""); // 手机优先
+		$("#pkg_ship_email").val(dataObj.email || "");
+		
+		$("#user_notice").val("您好，"+ (dataObj.realname || "") +" 先生/女士 \n\n"
+			+ "您的包裹已入库，信息如下:\n\n" 
+			+ "  收件人名: " + (dataObj.realname || "") + "\n"
+			+ "  邮寄地址: " + (dataObj.address || "") + "\n"
+			+ "  手机号码: " + (dataObj.mobile || dataObj.phone || "") + "\n"
+			+ "  转运金额: " + "\n\n"
+			+ "请尽快支付转运费用 " + "\n"
+			+ "支付链接: http://item.taobao.com/item.htm?spm=686.1000925.0.0.vg4okg&id=44809946055" + "\n\n"
+			+ "丰港转运客服中心" + "\n"
+			+ "QQ 2197143208" + "\n"
+			+ "EM support@tenso-japan.com" + "\n"
+			+ "WB http://www.tenso-japan.com" + "\n"
+			
+		);
+	}
+}
+
+function getUID() {
+	return $("#pkg_" + $("#pkg_id").val()).val();
+}
+</script>

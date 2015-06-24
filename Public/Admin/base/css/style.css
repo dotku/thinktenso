@@ -1,0 +1,90 @@
+/* RESET */
+html, body {
+	font-family: "微软雅黑", Arial, Helvetia, sans-serif;
+    height: 100%;
+}
+p {
+	text-indent: 2em;
+	max-width: 640px;
+}
+
+/* BOOTSTRAP OVERWIRTE*/
+.sidebar-nav{
+	width: 280px;
+	padding: 9px 0;
+}
+.hero-unit {
+	padding: 20px 30px;
+}
+.hero-unit p {
+	margin-top: 0.5em;
+}
+input[type="checkbox"] {
+	margin-top: -3px;
+}
+.control-label {
+	padding: 0 4px;
+}
+table caption {
+	font-size: 18px;
+	line-height: 30px;
+	text-align: left;
+	padding-left: 5px;
+	background-color: #F5F5F5;
+	border-left: 3px solid #333;
+}
+/* STICK-FOOTER */
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -80px;
+}
+#push, #footer {
+  height: 50px;
+}
+@media (max-width: 767px) {
+    #footer {
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+}
+/* CUSTOMIZED */
+.mainContainer {
+    padding-top: 60px;
+    min-height: 410px;
+	padding-bottom: 10px;
+}
+
+/* AID */
+.clear {
+	clear: both;
+}
+.minh166 {
+    min-height: 166px;
+}
+.warning {
+    color: #F22;
+}
+
+@media (max-width: 980px) {
+	/* Enable use of floated navbar text */
+	.navbar-text.pull-right {
+	  float: none;
+	  padding-left: 5px;
+	  padding-right: 5px;
+	}
+}
+
+@media (max-width: 1160px) {
+	/* Enable use of floated navbar text */
+	#sidebar {
+		display: none;
+	}
+	.mainContainer {
+		padding-top: 0px;
+	}
+}

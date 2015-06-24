@@ -1,0 +1,158 @@
+<include file="Public:head"/>
+<style>
+	select {
+		width: auto;
+	}
+</style>
+<div id="wrap">
+<include file="Public:top"/>
+    <div class="mainContainer container-fluid">
+      <div class="row-fluid">
+      <include file="Public:sidebar"/>
+        <div class="span9">
+          <div class="row-fluid">
+            <h3>客户信息</h3>
+			<form method="post">
+				<table class="table table-bordered">
+					<tr>
+						<th>入库货物
+						<td>
+								<select name="pkg_id" id="input_pkg_id">
+									<volist name="tablePkg" id="vo">
+										<option value="{$vo.pkg_id}">入库编号: {$vo.pkg_id} | 
+										客户编号: {$vo.user_id} | 
+										来源编号: {$vo.pkg_orig_number} </option>
+									</volist>
+									<volist name="tableBox" id="vo">
+										<option value="{$vo.box_id}">合箱编号: {$vo.box_id} | 
+										客户编号: {$vo.user_id} </option>
+									</volist>
+									<option value="">无</option>
+								</select>
+						</td>
+					</tr>
+					<tr class="row-info">
+						<th>货物信息
+						<td>
+							<table class="table table-bordered">
+									<tr>
+										<th style="width: 100px">入库编号
+										<td>{$rowPkg['pkg_id']}
+									<tr>
+										<th>客户编号
+										<td>UID <span id="info_user_id">{$rowPkg['user_id']}</span>
+									<tr>
+										<th>来源编号
+										<td><span id="info_pkg_orig_number">{$rowPkg['pkg_orig_number']}</span>
+									<tr>
+										<th>货物重量
+										<td><span id="info_pkg_weight">{$rowPkg['pkg_weight']}</span> g
+									<tr>
+										<th>收件人姓名
+										<td><span id="info_pkg_ship_receiver">{$rowPkg['pkg_ship_receiver']}</span>
+									<tr>
+										<th>收件人地址
+										<td><span id="info_pkg_ship_address">{$rowPkg['pkg_ship_address']}</span>
+									<tr>
+										<th>收件人电话
+										<td><span id="info_pkg_ship_phone">{$rowPkg['pkg_ship_phone']}</span>
+									<tr>
+										<th>邮寄方式
+										<td><span id="info_pkg_ship_way">{$rowPkg['pkg_ship_way']}</span>
+									<tr>
+										<th>应付金额
+										<td><span id="info_pkg_ship_fee">{$rowPkg['pkg_ship_fee']}</span>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<th>付款方式
+						<td>
+							<select name="pkg_payment_way">
+								<option value="taobao">淘宝
+								<option value="alipay">支付宝
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th>实际支付
+						<td><input type="text" name="pkg_user_email" class="input-xxlarge" placeholder="请输入金额(RMB)"></input></td>
+					</tr>
+				</table>
+				<input type="hidden" name="pkg_status" value="shipping"/>
+				<input type="submit" value=" 提交 "/>
+			</form>
+          </div><!--/row-->
+        </div><!--/span-->
+      </div><!--/row-->
+    </div><!--/.fluid-container-->
+	<div id="push"><!--FOR STICK FOOTER--></div>
+</div>
+<div style="display:none">
+<volist name="table" id="vo">
+	<input class="pid" type="hidden" id="pkg_{$vo.pkg_id}" value="{$vo.pkg_id}"/>
+</volist>
+</div>
+<include file="Public:footer"/>
+<include file="Public:javascript"/>
+<script>
+/**
+* 初始化
+*/
+
+var oDataList = new Object();
+
+// 预载操作，获得用户信息
+window.onload = function() {
+	$(".pid").each(function(i, o) {
+		if ($(o).val()) {
+			$.ajax({
+				url: "__ROOT__/Admin/API/getPkg/" + $(o).val(),
+				dataType: 'json',
+				success: function(data) {
+					if (data) {
+						eval("oDataList.pid" + data.pkg_id +" = data");
+					}
+				}
+			});
+		}
+	});
+}
+
+// 载入操作
+$(function(){
+	if (!$("#input_pkg_id").val()) {
+		$(".row-info").hide();
+	}
+});
+
+/**
+* 事件处理
+*/
+
+$("#input_pkg_id").change(function(){
+	if ($("#input_pkg_id").val()) {
+		updatePkgInfo(oDataList);
+		$(".row-info").show();
+	} else {
+		$(".row-info").hide();
+	}
+});
+
+/**
+* 辅助函数
+*/
+
+function updatePkgInfo(obj) {
+	if (obj) {
+		eval("var dataObj = obj.pid" + getPID());
+		for (var key in dataObj) {
+			eval('$("#info_" + key).text(dataObj.' + key + ')');
+		}
+	}
+}
+
+function getPID() {
+	return $("#input_pkg_id").val();
+}
+</script>
